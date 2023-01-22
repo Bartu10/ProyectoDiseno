@@ -1,0 +1,99 @@
+@media (prefers-color-scheme: dark){                                                                         //Los elementos que coloco aqui son los que cambiare con el modo claro
+    table{
+      td{background-color: #1b1e24;}
+      th{background-color: #C1C3D1;
+      color: #1b1e24;}
+}
+}
+
+.Leaderboard{
+  text-align: -webkit-center;
+
+  form{
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 10px $base2;
+    width: 55%;
+    label{
+      padding-left:5%;
+      input{
+        outline: none;
+        border: none;
+        color: $base2;
+        border-bottom: solid 1px $base2;
+        padding: 0 5px;
+        font-size: 100%;
+        width: 90%;
+      }
+    }
+  }
+}
+
+.rangos{
+  display: flex;
+
+}
+.bardata{
+  margin-top:1%;
+  margin-right: 1%;
+
+}
+.labelrang{
+  display: inline-block;
+}
+
+.Selector{
+  position: absolute;
+  height: 5vh;
+  left: 70%;
+  width: 7vw;
+  top: 15%;
+}
+
+table{
+  width: 80%;
+  margin: 0 auto;
+  font-size: medium;
+  padding-top:10%;
+  .avatar{
+    width: 10%;
+    padding: 1%;
+    text-align: center;
+
+  }
+  img{
+    height: 50px;
+    width: 50px;
+  }  
+}
+  th {
+    color:white;
+    background: $base2;
+    border-bottom: 4px solid $base;
+    padding: 10px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align:middle;
+    text-align: center;
+  }
+
+  
+  tr {
+    border-bottom: 1px solid #C1C3D1;
+    color: black;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+  }
+  
+  td {
+    height: 10px;
+    background:#FFFFFF;
+    padding:2%;
+    border-right: 1px solid #C1C3D1;
+  }
+  
+
+  h1{
+    text-align: center;
+    padding-top: 3%;
+  }

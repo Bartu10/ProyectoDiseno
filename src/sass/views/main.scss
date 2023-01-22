@@ -1,0 +1,120 @@
+.main{
+
+
+    @media (prefers-color-scheme: light){
+        body{
+            background-color: $base;
+        }
+        .textoinicio{
+            width: 100%;
+            text-align: center;
+            span{
+            background-color: $base;
+            border: solid 2px $base;
+            padding: 1%;
+        }                //Los elementos que coloco aqui son los que cambiare con el modo claro
+        }
+        .textosubmenu{
+            color: $letter_color;
+        } 
+    }
+    @media (prefers-color-scheme: dark){
+        body{
+            background-color: $baseNight;
+        }
+        .textoinicio{
+            background-color: $baseNight;
+            border: solid 2px $baseNight;                   //Los elementos que coloco aqui son los que cambiare con el modo oscuro
+        }
+        .textosubmenu{
+            color: $letter_colorNight;
+        } 
+    }
+    
+    
+    .section1{
+        height: 100vh;
+        overflow: hidden;                       //Aqui edito el section1, le pongo un overflow para que no sobresalga 
+        position: relative;
+        }
+        .imginicio{
+            width: 100%;
+            
+    }
+        .textoinicio{
+            padding: 2%;
+            position: absolute;                 //Para poder colocar el texto del titulo, he tenido que colocarlo con un position absolute, teniendolo que ponerle la posicion exacta
+            top: 60%;        
+        }
+        .textosubmenu{
+            font-size: 300%;
+            font-weight: 100;                       
+            text-align: center;
+    }
+        .section2 {
+            .gifs{  
+                height: 500px;                              //Le doy el tamaño a las imagenes
+                width: 500px;
+                }
+        }
+
+    @media(max-width:1100px){
+        .textoinicio{                
+            top:50%     //Aqui tambien tengo que editar la altura
+        }
+        .tableros{
+            flex-direction: column;             //Aqui edito la estructura de los tableros convirtiendolos en columnas
+        }
+    }
+    @media(max-width:950px){
+        .textoinicio{
+            top:47%;
+        }
+    }
+    @media(max-width: 850px){
+        .textoinicio{
+            top:45%;
+        }
+    
+    
+        .section2 .gifs {
+            width: 300px;
+            height: 300px;
+        }
+    }
+    @media(max-width:800px){
+        .textoinicio{
+            top: 60%;
+        }
+        .section1{
+    height: 60vh;               
+        }
+    }
+    
+    @media(max-width:600px){
+        .section2 .gifs img{
+            padding: 2%                         //Aqui doy distancia entre los 2 tableros
+        }
+        .section1{
+            height: 40vh;
+            }
+        .textosubmenu{
+            font-size: smaller;                 //Hago las letras mas pequeñas
+            }
+        h2{
+            font-size: small;
+        }
+    }
+    @media(max-width:550px){
+        *{
+            margin: 0;
+        }
+    }
+    
+    @media(max-width:500px){
+        .textoinicio{
+            font-size: xx-small;
+        }
+    }
+    
+}

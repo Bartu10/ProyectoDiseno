@@ -1,0 +1,60 @@
+.contactos{
+
+@media (prefers-color-scheme: light){
+    body{                                                                           //Los elementos que coloco aqui son los que cambiare con el modo claro
+        background-color: $secondBackground;
+    } 
+}
+@media (prefers-color-scheme: dark){
+    body{
+        background-color: $secondBackgroundNight;                               //Los elementos que coloco aqui son los que cambiare con el modo oscuro
+    }   
+}
+
+
+body{
+    height: 100%;
+}
+section{
+    h4,span{
+        text-align: center;                 //Alineo todo el texto al medio
+    }
+    .form{
+padding: 10.5%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+input, select{
+    width: 30%;
+    height: 30px;               //Le doy el tamaño a los inputs y selects
+}
+
+textarea {
+    width: 30%;                 //Le doy tamaño al text area
+    height: 80px;
+}
+.buttonSend{
+    padding: 2px 100px;
+    width: auto;                    //Edito el boton de enviar para esta web concreta 
+  }
+div{
+    text-align: center;
+}
+}
+
+
+@media(max-width:1000px){
+    section{
+        input,select{
+            width: 60%;             //Cambio el tamaño del input, select y text area cuando la web decrece
+            height: 40px;
+        }
+        textarea{
+            width: 60%;
+
+        }
+    }
+}
+}

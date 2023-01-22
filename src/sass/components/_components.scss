@@ -1,0 +1,178 @@
+@import 'base';
+
+@media (prefers-color-scheme: light){
+    .chess{
+        color:$letter_color;
+    }
+    #popupBody{                                 //Los elementos que coloco aqui son los que cambiare con el modo claro
+        background: $base;
+        box-shadow: 0 0 5px $base2;
+    }
+}
+
+
+
+@media (prefers-color-scheme: dark){
+.chess{
+    color:$letter_colorNight;
+}                                                //Los elementos que coloco aqui son los que cambiare con el modo oscuro
+#popupBody{
+    background: $baseNight;
+    box-shadow: 0 0 5px $base2Night;
+}
+
+
+}
+::-webkit-scrollbar {           
+    display: none;                 
+}                                   //Con esto suprimo las barritas de navegacion en vertical y en horizontal
+::-moz-scrollbar {
+    display: none;
+}
+.barrabusqueda{
+    height: 80%;
+    padding: 15px;                  //Aqui edito el tamaño y posicion de la barra de busqueda
+    width: 400px;
+}
+
+.logo{
+    height: 60px;                   //Aqui edito el tamaño del logo
+    width: 60px;
+}
+.chess{
+    align-items: center;
+    display: flex;  
+    justify-content: center;        //Aqui edito el titulo de la web (CHESS.COM)
+    text-decoration: none;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
+    bottom: 10;
+    left: 0;
+    opacity: 0;
+    position: fixed;                    //Aqui edito el overlay cuando aparece el login(esta siempre cargado pero sin opacidad haciendo que sea invisible)
+    right: 0;
+    top: 0;
+    transition: opacity 500ms;
+    visibility: hidden;
+}
+.overlay:target {
+    opacity: 1;                         //Aqui le añado la opaciodad para que aparezca
+    visibility: visible;
+}
+#popupBody{
+    border-radius: 15px;
+    bottom: 30%;
+    font-size: 20px;
+    margin: 20% auto;                   //Aqui el popUp que aparece cuando clickas en login, el cual aparece con una transicion
+    padding: 2%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    width: 20%;
+
+    .sendClean{
+        input{
+            height: 100%;               //Aqui los botones de enviar y de limpiar, para darles el tamaño adecuado
+            width: 100%;
+        }
+    }
+
+    input{
+        height: 20px;
+        width: 100%;
+    }
+
+    .buttonClean{
+        background-color: red;
+        border: none;
+        color: white;
+        display: inline-block;
+        font-size: 16px;                //Aqui edito el boton de limpiar
+        margin: 4px 2px;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        width: 48%;
+    }    
+}
+.buttonSend {
+    background-color: green;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-size: 16px;            
+    margin: 4px 2px;                    ///Aqui edito el boton de enviar
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 48%;
+}
+#cerrar{
+    color: #F00;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    right: 30px;                        //Aqui hago el la cruz de cerrar
+    text-decoration: none;
+    top: 20px;
+    transition: all 200ms;
+}
+
+@media(max-width:1500px){
+    #popupBody{
+        bottom: 5%;                     //Aqui edito el cuerpo del popUp del login/register cuando la web se hace mas pequeña para que sea responsive
+        width: 60%;
+}
+}
+
+.infoPersonal{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;                     //Aqui guardo el cuadro de informacion del perfil
+    border: 2px solid $base2;
+    border-radius: 20px;
+}
+
+.iconUser{
+    width: 200px;                               //Aqui eligo el tamaño de la foto de perfil
+}
+
+.eloRank{
+display: flex;
+align-items: center;                            //Aqui edito el div que contiene el rango y el elo de cada persona
+justify-content: space-evenly;
+.rank{
+    border: green;
+    background-color: green;                //Aqui edito el rango de cada jugador (Le pongo el borde y el fondo)
+    border-radius: 10px;
+}
+}
+@media(max-width:1500px){
+    .eloRank{
+        display: block;                     //Aqui cambio la composicion cuando la pestaña se hace mas pequeña para mejor organizacion
+    }
+    .rank{
+        height: 20px;
+        text-align: center;                 
+        align-items: center;                //Aqui edito el rango cuando la web decrece
+        width: 100%;
+        font-size: small;
+        height: auto;
+    }
+}
+.tableros{
+    display: flex;
+    font-size: large;                       //Aqui edito el div de los tableros y jugadores en el index
+    justify-content: space-around;
+    
+        }
+
+.separado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;                    //Aqui edito cada tablero con sus jugadores por separado
+    h2{
+        text-align: center;
+    }
+}

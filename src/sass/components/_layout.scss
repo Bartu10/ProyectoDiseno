@@ -1,0 +1,138 @@
+@import '_base';
+
+@media (prefers-color-scheme: light){
+    *{
+        color: $letter_color;
+    }
+    header{
+        background-color: $base2;
+        color: $letter_color;
+    }
+    nav li{
+        color: $letter_color;                       //Los elementos que coloco aqui son los que cambiare con el modo claro
+    }
+    body{
+        background-color: $secondBackground;
+    }
+    footer{
+        background-color: $base2;
+    }
+}
+@media (prefers-color-scheme: dark){
+    *{
+        color: $letter_colorNight;
+    }
+    header{
+        background-color: $baseNight;
+        color: $letter_colorNight;
+    }
+    nav li{
+        color: $letter_colorNight;                      //Los elementos que coloco aqui son los que cambiare con el modo oscuro
+    }
+    body{
+        background-color: $secondBackgroundNight;
+    }
+    footer{
+        background-color: $base2Night;
+    }
+}
+
+*{
+    text-decoration: none;              //Aqui le quito a todos los <a> las underline
+    span{
+        font-size: 250%;                //Aqui le cambio el tamaño a los span para hacerlos mas grandes             
+    }
+}
+header{
+    align-items: center;
+    display: flex;
+    height: 20%;                        //Aqui edito el header para exportarlo al resto de documentos de scss
+    justify-content: space-between;
+    nav{
+        padding-right: 5%;
+    }
+    nav ul{
+        display: flex;
+        height: auto;
+        height: 100%;
+        justify-items: center;
+    }
+    nav li{
+        display: inline-block;
+        font-size: 140%;
+        padding: 1.4%;
+        text-align: center;
+    
+    }
+    nav li:hover{
+        text-decoration:underline;      //Cuando paso el cursor por algun elemento del menu le sale el underline para enfatizar a donde vas
+    }
+}
+
+
+@font-face {
+    font-family: 'architects_daughterregular';
+    font-style: normal;
+    font-weight: normal;                //Aqui importo el font de la web
+    src: url('fonts/Architects-Daughter-Regular/architectsdaughter/ArchitectsDaughter-Regular.ttf') format('woff2'),
+         url('fonts/Architects-Daughter-Regular/architectsdaughter/ArchitectsDaughter-Regular.ttf') format('woff');
+}
+body{
+    cursor: url(https://cur.cursors-4u.net/sports/spo-7/spo722.cur), auto ; //Aqui importo el cursor
+    font-family: 'architects_daughterregular' ;                 
+    margin: 0;
+    margin-bottom: 10%; 
+}    
+    footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        span{
+            font-size:medium;
+        }
+       
+        display: flex;
+        justify-content: space-between;                 //Edito el footer para exportarlo a el resto de scss
+        padding-left: 1%;
+        padding-right: 1%;
+        .rrss{
+            align-items: center;
+            display: flex;
+            justify-content: space-around;
+            padding-right: 1%;
+            img{
+                height: 80%;
+            }
+        }
+    }
+    
+    @media(max-width:850px) {
+        *{
+            font-size: 95%;
+            padding-inline-start: 0px;          //Cambio el tamaño de todo para que decrezca en movil               
+        }
+    
+        * span{
+            font-size: 150%;
+        }
+        
+        header{
+            flex-direction: column;
+            .barrabusqueda{                     //Aqui cambio la estructura del header para que se adecue a la web y oculto la barra de busqueda para que no quede un header gigante
+                display: none;
+            }
+            nav{
+                padding-right: 0;
+                width: 100%;
+                text-align: center;
+                ul{
+                    float:none;                 
+                    display: block;
+                }
+            }
+        }
+        
+        
+        
+    }
+

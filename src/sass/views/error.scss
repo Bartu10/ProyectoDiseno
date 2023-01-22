@@ -1,0 +1,108 @@
+.Error{
+
+//La animacion del tablero esta cogida de otra web, el lunes te digo de cual porque desde aqui no la encuentro
+
+$whity: #cfd8dc;//blanco
+$blacky: #37474f;//negraceo 
+$deld: 2s/16;
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: $base;      //Le escojo el fondo
+}
+
+p{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: xx-large;        //Edito el el texto de ERROR 404 y le creo una animacion para que el color vaya rotando entre blanco-gris-negro
+    text-align: center;
+    animation: CambioColor 10s infinite;
+}
+@keyframes CambioColor {
+    0% {color:$letter_color;} //Negro
+    20%{color: #cfd8dc;} //Blanco
+    40%{color: darkgray;} //Gris Claro
+    60%{color:grey;} //Gris
+    80%{color:dimgray;} //Gris Oscuro
+    100%{color: $letter_color;} //Negro
+
+}
+.container{
+  width: 80vmin;
+  height: 80vmin;
+  margin: 1vmin auto;           
+  animation: c 2s infinite linear; //La animacion dura 2 segundos y se va repitiendo constantemente, su nombre es c
+  overflow: hidden; //Si sale de la web que no resalga
+}
+
+.square{
+  display: block;
+  float: left;
+  width: calc(100%/8);
+  height: calc(100%/8);
+  animation: clockwise 2s infinite linear; //La animacion dura 2 segundos y se va repitiendo constantemente, su nombre es clockwise
+  @for $i from 0 to 4 {                                       //Hace un bucle for 
+    &:nth-child(n+#{$i*16+1}):nth-child(-n+#{$i*16+8}){       
+      background-color: $whity;               //Pone blanco el fondo del tablero  
+      animation-delay: $i*$deld;              //La duracion va aumentando con el tiempo ya que deld es 2s/16 y lo va multiplicando por el valor del for haciendo que distorsione la velocidad
+      &:nth-child(odd){
+        background-color: $blacky;             //Pone los impares de color negro
+        animation-name: counter-clockwise;     //Hace el efecto contrario a la animacion clock 
+        animation-delay: 2s/2 + $i*$deld;      //Aplica la animacion sobre ese tiempo (El cual va cambiando gracias al for
+      }
+    }
+    &:nth-child(n+#{$i*16+9}):nth-child(-n+#{$i*16+16}){
+      animation-delay: $deld/2 + $i*$deld;        //Define la animacion, esta va aumentando con el tiempo ya que el valor del for hace que distorsione la velocidad
+      background-color: $whity;                   //Aplica el color del fondo
+      &:nth-child(even){
+        animation-name: counter-clockwise;        //Este es el nombre de la animacion
+        background-color: $blacky;                //Aplica el color del fondo
+        animation-delay: 2s/2 + $deld/2 + $i*$deld;   //Define la animacion, esta va aumentando con el tiempo ya que el valor del for hace que distorsione la velocidad
+      }
+    }
+  }
+}
+
+
+
+@keyframes clockwise {
+  15%{
+    transform: rotate(0.125turn) scale(0.5,0.5);
+  }
+  30%{
+    transform: rotate(0.25turn) scale(1,1);       //La evolucion que va teniendo la animacion
+  }
+  100%{
+    transform: rotate(0.25turn) scale(1,1);
+  }
+}
+@keyframes counter-clockwise {
+  15%{
+    transform: rotate(-0.125turn) scale(0.5,0.5);
+  }
+  30%{
+    transform: rotate(-0.25turn) scale(1,1);      //La evolucion que va teniendo la animacion
+  }
+  100%{
+    transform: rotate(-0.25turn) scale(1,1);
+  }
+}
+@keyframes c {
+  0% { 
+     background-color: $blacky;
+  }
+  50% { 
+     background-color: $blacky;
+  }
+  51% {                                                 //La evolucion que va teniendo la animacion
+     background-color: $whity;
+  }
+  100%{
+    background-color: $whity;
+  }
+}
+}
